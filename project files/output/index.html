@@ -1,0 +1,154 @@
+
+<!-- saved from url=(0043)file:///C:/Users/kdhan/Downloads/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body>import React, { useContext } from 'react'
+
+import { GeneralContext } from '../context/GeneralContext';
+
+const Register = ({setAuthType}) =&gt; {
+
+
+  const {setUsername, setEmail, setPassword, setUsertype, register} = useContext(GeneralContext);
+
+  const handleRegister = async (e) =&gt;{
+    e.preventDefault();
+    await register();
+  }
+
+  return (
+    <form classname="authForm">
+    <h2>Register</h2>
+    <div classname="form-floating mb-3 authFormInputs">
+        <input type="text" classname="form-control" id="floatingInput" placeholder="username" onchange="{(e)="> setUsername(e.target.value)} /&gt;
+        <label htmlfor="floatingInput">Username</label>
+    </div>
+    <div classname="form-floating mb-3 authFormInputs">
+        <input type="email" classname="form-control" id="floatingEmail" placeholder="name@example.com" onchange="{(e)="> setEmail(e.target.value)} /&gt;
+        <label htmlfor="floatingInput">Email address</label>
+    </div>
+    <div classname="form-floating mb-3 authFormInputs">
+        <input type="password" classname="form-control" id="floatingPassword" placeholder="Password" onchange="{(e)="> setPassword(e.target.value)} /&gt; 
+        <label htmlfor="floatingPassword">Password</label>
+    </div>
+    <select classname="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onchange="{(e)="> setUsertype(e.target.value)}&gt;
+      <option value="">User type</option>
+      <option value="freelancer">Freelancer</option>
+      <option value="client">Client</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <button classname="btn btn-primary" onclick="{handleRegister}">Sign up</button>
+    <p>Already registered? <span onclick="{()="> setAuthType('login')}&gt;Login</span></p>
+</form>
+  )
+}
+
+export default Register
+import React, { useContext } from 'react'
+import { GeneralContext } from '../context/GeneralContext';
+
+const Login = ({setAuthType}) =&gt; {
+
+  const {setEmail, setPassword, login} = useContext(GeneralContext);
+
+  const handleLogin = async (e) =&gt;{
+    e.preventDefault();
+    await login();
+  }
+
+  return (
+    <form classname="authForm">
+        <h2>Login</h2>
+        <div classname="form-floating mb-3 authFormInputs">
+            <input type="email" classname="form-control" id="floatingInput" placeholder="name@example.com" onchange="{(e)" ==""> setEmail(e.target.value)} /&gt;
+            <label htmlfor="floatingInput">Email address</label>
+        </div>
+            <div classname="form-floating mb-3 authFormInputs">
+            <input type="password" classname="form-control" id="floatingPassword" placeholder="Password" onchange="{(e)" ==""> setPassword(e.target.value)} /&gt; 
+            <label htmlfor="floatingPassword">Password</label>
+        </div>
+        <button type="submit" classname="btn btn-primary" onclick="{handleLogin}">Sign in</button>
+
+        <p>Not registered? <span onclick="{()="> setAuthType('register')}&gt;Register</span></p>
+    </form>
+  )
+}
+
+export default Login
+import React, { useContext, useEffect, useState } from 'react'
+import '../styles/navbar.css'
+import { useNavigate } from 'react-router-dom'
+import { GeneralContext } from '../context/GeneralContext';
+
+const Navbar = () =&gt; {
+
+
+  const userId = localStorage.getItem('userId');
+
+  const usertype = localStorage.getItem('usertype');
+
+  const navigate = useNavigate();
+
+  const {logout} = useContext(GeneralContext);
+
+
+  return (
+    &lt;&gt;
+
+      {usertype === 'freelancer' ?
+          <div classname="navbar">
+            <h3>SB Works</h3>
+    
+            <div classname="nav-options">
+                <p onclick="{()="> navigate('/freelancer')} &gt;Dashboard</p>
+                <p onclick="{()="> navigate('/all-projects')} &gt;All Projects</p>
+                <p onclick="{()="> navigate('/my-projects')} &gt;My Projects</p>
+                <p onclick="{()="> navigate('/myApplications')} &gt;Applications</p>
+                <p onclick="{()="> logout()} &gt;Logout</p>
+            </div>
+          </div>
+      :
+      
+      ""}
+      
+      {
+        usertype === 'client' ?
+          <div classname="navbar">
+            <h3>SB Works</h3>
+
+            <div classname="nav-options">
+                <p onclick="{()="> navigate('/client')} &gt;Dashboard</p>
+                <p onclick="{()="> navigate('/new-project')} &gt;New Project</p>
+                <p onclick="{()="> navigate('/project-applications')} &gt;Applications</p>
+                <p onclick="{()="> logout()}&gt;Logout</p>
+            </div>
+          </div>
+        :
+        ""
+      }
+
+      
+      {usertype === 'admin' ?
+          <div classname="navbar">
+            <h3>SB Works (admin)</h3>
+    
+            <div classname="nav-options">
+                <p onclick="{()="> navigate('/admin')} &gt;Home</p>
+                <p onclick="{()="> navigate('/all-users')} &gt;All users</p>
+                <p onclick="{()="> navigate('/admin-projects')} &gt;Projects</p>
+                <p onclick="{()="> navigate('/admin-applications')} &gt;Applications</p>
+                <p onclick="{()="> logout()}&gt;Logout</p>
+            </div>
+          </div>
+      : ""}
+
+      
+
+    
+    
+
+    
+  )
+}
+
+export default Navbar
+</body></html>

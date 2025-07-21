@@ -1,348 +1,230 @@
-# FreelanceFinder-Discovering-Opportunities-Unlocking-Potential
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreelanceFinder: Discovering Opportunities, Unlocking Potential</title>
-    
-    <!-- Tailwind CSS -->
+    <title>FreelanceFinder: Presentation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Custom Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        .hero-bg {
-            background-color: #f8fafc;
+        /* Simple transition for slide changes */
+        .slide {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+            pointer-events: auto;
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4 antialiased">
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900">FreelanceFinder</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">Find Work</a>
-                <a href="#freelancers" class="text-gray-600 hover:text-indigo-600 transition duration-300">Find Talent</a>
-                <a href="#how-it-works" class="text-gray-600 hover:text-indigo-600 transition duration-300">How It Works</a>
+    <div class="w-full max-w-4xl mx-auto">
+        <!-- Presentation Container -->
+        <div id="presentation-container" class="relative bg-white rounded-2xl shadow-2xl w-full aspect-[16/9] overflow-hidden">
+
+            <!-- Slide 1: Title Slide -->
+            <div id="slide-1" class="slide active w-full h-full p-8 md:p-16 flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-600 to-indigo-800 text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight">FreelanceFinder</h1>
+                <p class="mt-4 text-lg sm:text-xl md:text-2xl font-light text-blue-200">Discovering Opportunities, Unlocking Potential</p>
+                <div class="absolute bottom-8 text-center">
+                    <p class="text-base md:text-lg font-medium">[Your Name/Company Name]</p>
+                    <p class="text-sm text-blue-300">[Date]</p>
+                </div>
             </div>
-            <div class="hidden md:flex items-center space-x-4">
-                <button onclick="openModal('loginModal')" class="text-gray-600 hover:text-indigo-600 transition duration-300">Login</button>
-                <button onclick="openModal('signupModal')" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">Sign Up</button>
+
+            <!-- Slide 2: The Problem -->
+            <div id="slide-2" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">The Challenge for Modern Work</h2>
+                <div class="grid md:grid-cols-2 gap-6 text-base md:text-lg">
+                    <div class="bg-red-50 rounded-xl p-6 border border-red-200">
+                        <h3 class="font-semibold text-red-800 text-xl mb-3">For Freelancers</h3>
+                        <p class="text-gray-700">It's difficult and time-consuming to consistently find credible projects that match their skills.</p>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                        <h3 class="font-semibold text-blue-800 text-xl mb-3">For Clients</h3>
+                        <p class="text-gray-700">Sourcing reliable, skilled talent for specific projects can be a major bottleneck, delaying innovation and growth.</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-center bg-gray-100 p-6 rounded-xl">
+                    <p class="text-lg md:text-xl text-gray-700 font-medium">The market is fragmented, making it hard for both sides to connect efficiently.</p>
+                </div>
             </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+
+            <!-- Slide 3: The Solution -->
+            <div id="slide-3" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center items-center text-center">
+                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">Introducing FreelanceFinder</h2>
+                 <p class="max-w-3xl text-lg md:text-xl text-gray-600 mb-10">A centralized, user-friendly platform designed to seamlessly connect skilled freelancers with clients who need their expertise.</p>
+                 <div class="w-full max-w-2xl bg-gradient-to-r from-green-400 to-blue-500 text-white p-8 rounded-2xl shadow-lg">
+                     <h3 class="text-xl md:text-2xl font-bold mb-2">Our Mission</h3>
+                     <p class="text-base md:text-lg">To empower freelancers to build sustainable careers and to help businesses grow by providing on-demand access to top talent.</p>
+                 </div>
             </div>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#projects" class="block py-2 text-gray-600 hover:text-indigo-600">Find Work</a>
-             <a href="#freelancers" class="block py-2 text-gray-600 hover:text-indigo-600">Find Talent</a>
-             <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-indigo-600">How It Works</a>
-             <div class="mt-4">
-                <button onclick="openModal('loginModal')" class="w-full text-left py-2 text-gray-600 hover:text-indigo-600">Login</button>
-                <button onclick="openModal('signupModal')" class="w-full mt-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Sign Up</button>
-             </div>
+
+            <!-- Slide 4: How It Works -->
+            <div id="slide-4" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-10 text-center">A Simple, 3-Step Process</h2>
+                <div class="flex flex-col md:flex-row justify-around items-center gap-8">
+                    <div class="text-center w-60"><div class="bg-blue-100 text-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-3xl font-bold">1</div><h3 class="font-bold text-xl mb-2">Post a Project</h3><p class="text-gray-600">Clients easily outline their project requirements, scope, and budget.</p></div>
+                    <div class="hidden md:block text-gray-300 text-4xl">→</div>
+                    <div class="text-center w-60"><div class="bg-blue-100 text-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-3xl font-bold">2</div><h3 class="font-bold text-xl mb-2">Find & Bid</h3><p class="text-gray-600">Freelancers browse opportunities and submit bids, showcasing their skills.</p></div>
+                    <div class="hidden md:block text-gray-300 text-4xl">→</div>
+                    <div class="text-center w-60"><div class="bg-blue-100 text-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-3xl font-bold">3</div><h3 class="font-bold text-xl mb-2">Collaborate & Pay</h3><p class="text-gray-600">Hire, collaborate, and use our secure payment system upon completion.</p></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Key Features -->
+            <div id="slide-5" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Built for Success</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-sm md:text-base">
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Advanced Search:</strong> Powerful filters to find the perfect job.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Verified Profiles:</strong> Detailed profiles with portfolios and reviews.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Secure Bidding:</strong> Transparent and fair bidding process.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Integrated Messaging:</strong> Seamless communication between parties.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Secure Payments:</strong> Guaranteed payments held in escrow.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Personalized Dashboards:</strong> Track everything in one place.</p></div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Target Audience -->
+            <div id="slide-6" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Who We Serve</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8">
+                        <h3 class="font-bold text-xl md:text-2xl text-gray-800 mb-4">Freelancers</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm md:text-base">
+                            <li>Web & Mobile Developers</li>
+                            <li>UI/UX Designers</li>
+                            <li>Content Writers & Marketers</li>
+                            <li>Project Managers</li>
+                            <li>And many more skilled professionals...</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8">
+                        <h3 class="font-bold text-xl md:text-2xl text-gray-800 mb-4">Clients</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm md:text-base">
+                            <li>Startups & Small Businesses</li>
+                            <li>Marketing Agencies</li>
+                            <li>Large Corporations needing specialized talent for short-term projects.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Monetization Strategy -->
+            <div id="slide-7" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Monetization Strategy</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm md:text-base">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200"><strong class="text-blue-800">Commission-Based Model:</strong> We take a small percentage fee from each successfully completed project.</div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200"><strong class="text-green-800">Client Fee:</strong> A small service charge on the total project amount.</div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200"><strong class="text-green-800">Freelancer Fee:</strong> A tiered commission based on lifetime earnings with a client.</div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200"><strong class="text-yellow-800">Featured Listings (Future):</strong> Options for clients to promote their projects.</div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200"><strong class="text-yellow-800">Subscription Plans (Future):</strong> Premium features for power users.</div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Why Now? The Market Opportunity -->
+            <div id="slide-8" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center items-center text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6">The Rise of the Gig Economy</h2>
+                <div class="max-w-3xl space-y-5 text-lg md:text-xl text-gray-600">
+                    <p>The freelance workforce is growing at an <strong class="text-gray-800">unprecedented rate</strong>.</p>
+                    <p>Companies are increasingly adopting <strong class="text-gray-800">flexible, on-demand talent models</strong> to stay agile.</p>
+                    <p>There is a clear need for a <strong class="text-gray-800">trusted, efficient platform</strong> to facilitate these connections.</p>
+                </div>
+            </div>
+
+            <!-- Slide 9: Thank You & Q&A -->
+            <div id="slide-9" class="slide w-full h-full p-8 md:p-16 flex flex-col justify-center items-center text-center bg-gray-800 text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Let's Build the Future of Work, Together.</h2>
+                <p class="text-4xl md:text-6xl font-extrabold text-blue-400 mb-10">Questions?</p>
+                <div>
+                    <p class="text-lg text-gray-300">[Your Contact Information: email@example.com]</p>
+                    <p class="text-lg text-gray-300">[Website: www.freelancefinder.com (example)]</p>
+                </div>
+            </div>
+
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-bg py-20 md:py-32">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Discover Opportunities,</h1>
-                <h2 class="text-4xl md:text-6xl font-bold text-indigo-600 leading-tight mb-6">Unlock Your Potential.</h2>
-                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">The ultimate platform connecting skilled freelancers with innovative projects. Your next big opportunity is just a click away.</p>
-                <a href="#projects" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition duration-300">Get Started</a>
-            </div>
-        </section>
-
-        <!-- Featured Projects Section -->
-        <section id="projects" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
-                <div id="project-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Card 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">E-commerce Website Redesign</h3>
-                            <p class="text-gray-600 mb-4">Looking for a talented UI/UX designer to redesign our Shopify store for a better user experience.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-indigo-600">Budget: $2,500</span>
-                                <span class="text-sm text-gray-500">Posted 2 days ago</span>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-gray-200">
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">UI/UX</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Shopify</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Figma</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project Card 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Mobile App Development (React Native)</h3>
-                            <p class="text-gray-600 mb-4">We need an experienced React Native developer to build a cross-platform social media app.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-indigo-600">Budget: $8,000</span>
-                                <span class="text-sm text-gray-500">Posted 5 days ago</span>
-                            </div>
-                            <div class="mt-4 pt-4 border-t border-gray-200">
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">React Native</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Firebase</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project Card 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Content Writer for Tech Blog</h3>
-                            <p class="text-gray-600 mb-4">Seeking a skilled writer to create engaging blog posts about AI and machine learning.</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-sm font-medium text-indigo-600">Budget: $50/article</span>
-                                <span class="text-sm text-gray-500">Posted 1 week ago</span>
-                            </div>
-                             <div class="mt-4 pt-4 border-t border-gray-200">
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Content Writing</span>
-                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">SEO</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-12">
-                    <button id="load-more-projects" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition duration-300">Load More Projects</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="bg-gray-50 py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-                    <!-- Step 1 -->
-                    <div class="p-6">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-5.747-8.994l11.494 0M4.753 12l14.494 0"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">1. Post a Project</h3>
-                        <p class="text-gray-600">Clients describe their needs, set a budget, and post a project for our community of freelancers.</p>
-                    </div>
-                    <!-- Step 2 -->
-                    <div class="p-6">
-                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">2. Find & Bid</h3>
-                        <p class="text-gray-600">Freelancers browse projects, find ones that match their skills, and submit compelling bids.</p>
-                    </div>
-                    <!-- Step 3 -->
-                    <div class="p-6">
-                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
-                           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-2">3. Collaborate & Pay</h3>
-                        <p class="text-gray-600">Clients hire the best candidate. Collaborate, get work done, and make secure payments through our platform.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Top Freelancers Section -->
-        <section id="freelancers" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">Meet Top Freelancers</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Freelancer Card 1 -->
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
-                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=JS" alt="Jane Smith" class="w-24 h-24 rounded-full mx-auto mb-4">
-                        <h3 class="text-lg font-semibold">Jane Smith</h3>
-                        <p class="text-indigo-600">Full-Stack Developer</p>
-                        <p class="text-gray-500 text-sm mt-2">Specializing in React, Node.js, and serverless architecture.</p>
-                    </div>
-                    <!-- Freelancer Card 2 -->
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
-                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=AD" alt="Alex Doe" class="w-24 h-24 rounded-full mx-auto mb-4">
-                        <h3 class="text-lg font-semibold">Alex Doe</h3>
-                        <p class="text-indigo-600">Graphic Designer</p>
-                        <p class="text-gray-500 text-sm mt-2">Creating stunning visuals and brand identities that stand out.</p>
-                    </div>
-                    <!-- Freelancer Card 3 -->
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
-                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=CW" alt="Chris Wilson" class="w-24 h-24 rounded-full mx-auto mb-4">
-                        <h3 class="text-lg font-semibold">Chris Wilson</h3>
-                        <p class="text-indigo-600">Digital Marketer</p>
-                        <p class="text-gray-500 text-sm mt-2">Expert in SEO, content marketing, and social media strategy.</p>
-                    </div>
-                    <!-- Freelancer Card 4 -->
-                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
-                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=PT" alt="Patricia Taylor" class="w-24 h-24 rounded-full mx-auto mb-4">
-                        <h3 class="text-lg font-semibold">Patricia Taylor</h3>
-                        <p class="text-indigo-600">Project Manager</p>
-                        <p class="text-gray-500 text-sm mt-2">Agile certified professional ensuring projects are delivered on time.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">FreelanceFinder</h3>
-                    <p class="text-gray-400">Discovering Opportunities, Unlocking Potential.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">For Freelancers</h3>
-                    <ul>
-                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Find Work</a></li>
-                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Create Profile</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">For Clients</h3>
-                    <ul>
-                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Find Talent</a></li>
-                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Post a Project</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
-                <p>&copy; 2025 FreelanceFinder. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Modals -->
-    <!-- Login Modal -->
-    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
-        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4">
-            <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
-            <form>
-                <div class="mb-4">
-                    <label for="login-email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="login-email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <div class="mb-6">
-                    <label for="login-password" class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" id="login-password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Login</button>
-            </form>
-            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">&times;</button>
+        <!-- Navigation -->
+        <div class="flex items-center justify-center mt-6 space-x-4">
+            <button id="prev-btn" class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Previous
+            </button>
+            <span id="slide-counter" class="text-gray-600 font-medium text-lg">1 / 9</span>
+            <button id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Next
+            </button>
         </div>
     </div>
-
-    <!-- Sign Up Modal -->
-    <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
-        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4">
-            <h2 class="text-2xl font-bold text-center mb-6">Sign Up</h2>
-            <form>
-                 <div class="mb-4">
-                    <label for="signup-name" class="block text-sm font-medium text-gray-700">Full Name</label>
-                    <input type="text" id="signup-name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <div class="mb-4">
-                    <label for="signup-email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="signup-email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <div class="mb-6">
-                    <label for="signup-password" class="block text-sm font-medium text-gray-700">Password</label>
-                    <input type="password" id="signup-password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Create Account</button>
-            </form>
-            <button onclick="closeModal('signupModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">&times;</button>
-        </div>
-    </div>
-
 
     <script>
-        // --- Mobile Menu ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        // --- SCRIPT FOR SLIDE NAVIGATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // --- Smooth Scrolling ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            function updateSlideView() {
+                // Remove 'active' class from all slides
+                slides.forEach((slide, index) => {
+                    if (index === currentSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
                 });
-            });
-        });
 
-        // --- Load More Projects ---
-        const loadMoreBtn = document.getElementById('load-more-projects');
-        const projectList = document.getElementById('project-list');
-        
-        loadMoreBtn.addEventListener('click', () => {
-            // This is a mock function. In a real app, you would fetch more projects from a server.
-            const newProject = `
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">New Project: API Integration</h3>
-                        <p class="text-gray-600 mb-4">We need a backend developer to integrate a third-party payment API.</p>
-                        <div class="flex items-center justify-between">
-                            <span class="text-sm font-medium text-indigo-600">Budget: $1,200</span>
-                            <span class="text-sm text-gray-500">Posted just now</span>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-gray-200">
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">API</span>
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Backend</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-            projectList.insertAdjacentHTML('beforeend', newProject);
-        });
+                // Update slide counter
+                slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
 
-        // --- Modal Logic ---
-        function openModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeModal(modalId) {
-            const modal = document.getElementById(modalId);
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        // Close modal on outside click
-        window.addEventListener('click', function(event) {
-            if (event.target.id === 'loginModal' || event.target.id === 'signupModal') {
-                closeModal(event.target.id);
+                // Update button states
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
             }
+
+            // Event Listeners
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlideView();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlideView();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+
+            // Initial setup
+            updateSlideView();
         });
     </script>
 
 </body>
 </html>
- 

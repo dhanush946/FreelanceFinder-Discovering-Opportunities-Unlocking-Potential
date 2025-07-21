@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreelanceFinder: Presentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple transition for slide changes */
+        .slide {
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-4 antialiased">
+
+    <div class="w-full max-w-4xl mx-auto">
+        <!-- Presentation Container -->
+        <div id="presentation-container" class="relative bg-white rounded-2xl shadow-2xl w-full aspect-[16/9] overflow-hidden">
+
+            <!-- Slide 1: Title Slide -->
+            <div id="slide-1" class="slide active w-full h-full p-8 md:p-16 flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-600 to-indigo-800 text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight">FreelanceFinder</h1>
+                <p class="mt-4 text-lg sm:text-xl md:text-2xl font-light text-blue-200">Discovering Opportunities, Unlocking Potential</p>
+                <div class="absolute bottom-8 text-center">
+                    <p class="text-base md:text-lg font-medium">[Your Name/Company Name]</p>
+                    <p class="text-sm text-blue-300">[Date]</p>
+                </div>
+            </div>
+
+            <!-- Slide 2: The Problem -->
+            <div id="slide-2" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">The Challenge for Modern Work</h2>
+                <div class="grid md:grid-cols-2 gap-6 text-base md:text-lg">
+                    <div class="bg-red-50 rounded-xl p-6 border border-red-200">
+                        <h3 class="font-semibold text-red-800 text-xl mb-3">For Freelancers</h3>
+                        <p class="text-gray-700">It's difficult and time-consuming to consistently find credible projects that match their skills.</p>
+                    </div>
+                    <div class="bg-blue-50 rounded-xl p-6 border border-blue-200">
+                        <h3 class="font-semibold text-blue-800 text-xl mb-3">For Clients</h3>
+                        <p class="text-gray-700">Sourcing reliable, skilled talent for specific projects can be a major bottleneck, delaying innovation and growth.</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-center bg-gray-100 p-6 rounded-xl">
+                    <p class="text-lg md:text-xl text-gray-700 font-medium">The market is fragmented, making it hard for both sides to connect efficiently.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3: The Solution -->
+            <div id="slide-3" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center items-center text-center">
+                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">Introducing FreelanceFinder</h2>
+                 <p class="max-w-3xl text-lg md:text-xl text-gray-600 mb-10">A centralized, user-friendly platform designed to seamlessly connect skilled freelancers with clients who need their expertise.</p>
+                 <div class="w-full max-w-2xl bg-gradient-to-r from-green-400 to-blue-500 text-white p-8 rounded-2xl shadow-lg">
+                     <h3 class="text-xl md:text-2xl font-bold mb-2">Our Mission</h3>
+                     <p class="text-base md:text-lg">To empower freelancers to build sustainable careers and to help businesses grow by providing on-demand access to top talent.</p>
+                 </div>
+            </div>
+
+            <!-- Slide 4: How It Works -->
+            <div id="slide-4" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-10 text-center">A Simple, 3-Step Process</h2>
+                <div class="flex flex-col md:flex-row justify-around items-center gap-8">
+                    <div class="text-center w-60"><div class="bg-blue-100 text-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-3xl font-bold">1</div><h3 class="font-bold text-xl mb-2">Post a Project</h3><p class="text-gray-600">Clients easily outline their project requirements, scope, and budget.</p></div>
+                    <div class="hidden md:block text-gray-300 text-4xl">→</div>
+                    <div class="text-center w-60"><div class="bg-blue-100 text-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-3xl font-bold">2</div><h3 class="font-bold text-xl mb-2">Find & Bid</h3><p class="text-gray-600">Freelancers browse opportunities and submit bids, showcasing their skills.</p></div>
+                    <div class="hidden md:block text-gray-300 text-4xl">→</div>
+                    <div class="text-center w-60"><div class="bg-blue-100 text-blue-600 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4 text-3xl font-bold">3</div><h3 class="font-bold text-xl mb-2">Collaborate & Pay</h3><p class="text-gray-600">Hire, collaborate, and use our secure payment system upon completion.</p></div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Key Features -->
+            <div id="slide-5" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Built for Success</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-sm md:text-base">
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Advanced Search:</strong> Powerful filters to find the perfect job.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Verified Profiles:</strong> Detailed profiles with portfolios and reviews.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Secure Bidding:</strong> Transparent and fair bidding process.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Integrated Messaging:</strong> Seamless communication between parties.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Secure Payments:</strong> Guaranteed payments held in escrow.</p></div>
+                    <div class="flex items-start space-x-3"><span class="text-blue-500 font-bold text-xl">✓</span><p><strong class="text-gray-800">Personalized Dashboards:</strong> Track everything in one place.</p></div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Target Audience -->
+            <div id="slide-6" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Who We Serve</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8">
+                        <h3 class="font-bold text-xl md:text-2xl text-gray-800 mb-4">Freelancers</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm md:text-base">
+                            <li>Web & Mobile Developers</li>
+                            <li>UI/UX Designers</li>
+                            <li>Content Writers & Marketers</li>
+                            <li>Project Managers</li>
+                            <li>And many more skilled professionals...</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 md:p-8">
+                        <h3 class="font-bold text-xl md:text-2xl text-gray-800 mb-4">Clients</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm md:text-base">
+                            <li>Startups & Small Businesses</li>
+                            <li>Marketing Agencies</li>
+                            <li>Large Corporations needing specialized talent for short-term projects.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Monetization Strategy -->
+            <div id="slide-7" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center">Monetization Strategy</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm md:text-base">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200"><strong class="text-blue-800">Commission-Based Model:</strong> We take a small percentage fee from each successfully completed project.</div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200"><strong class="text-green-800">Client Fee:</strong> A small service charge on the total project amount.</div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200"><strong class="text-green-800">Freelancer Fee:</strong> A tiered commission based on lifetime earnings with a client.</div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200"><strong class="text-yellow-800">Featured Listings (Future):</strong> Options for clients to promote their projects.</div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200"><strong class="text-yellow-800">Subscription Plans (Future):</strong> Premium features for power users.</div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Why Now? The Market Opportunity -->
+            <div id="slide-8" class="slide w-full h-full p-8 md:p-12 flex flex-col justify-center items-center text-center">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-6">The Rise of the Gig Economy</h2>
+                <div class="max-w-3xl space-y-5 text-lg md:text-xl text-gray-600">
+                    <p>The freelance workforce is growing at an <strong class="text-gray-800">unprecedented rate</strong>.</p>
+                    <p>Companies are increasingly adopting <strong class="text-gray-800">flexible, on-demand talent models</strong> to stay agile.</p>
+                    <p>There is a clear need for a <strong class="text-gray-800">trusted, efficient platform</strong> to facilitate these connections.</p>
+                </div>
+            </div>
+
+            <!-- Slide 9: Thank You & Q&A -->
+            <div id="slide-9" class="slide w-full h-full p-8 md:p-16 flex flex-col justify-center items-center text-center bg-gray-800 text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Let's Build the Future of Work, Together.</h2>
+                <p class="text-4xl md:text-6xl font-extrabold text-blue-400 mb-10">Questions?</p>
+                <div>
+                    <p class="text-lg text-gray-300">[Your Contact Information: email@example.com]</p>
+                    <p class="text-lg text-gray-300">[Website: www.freelancefinder.com (example)]</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex items-center justify-center mt-6 space-x-4">
+            <button id="prev-btn" class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Previous
+            </button>
+            <span id="slide-counter" class="text-gray-600 font-medium text-lg">1 / 9</span>
+            <button id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- SCRIPT FOR SLIDE NAVIGATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const slideCounter = document.getElementById('slide-counter');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function updateSlideView() {
+                // Remove 'active' class from all slides
+                slides.forEach((slide, index) => {
+                    if (index === currentSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                // Update slide counter
+                slideCounter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+
+                // Update button states
+                prevBtn.disabled = currentSlide === 0;
+                nextBtn.disabled = currentSlide === totalSlides - 1;
+            }
+
+            // Event Listeners
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    updateSlideView();
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    updateSlideView();
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+
+            // Initial setup
+            updateSlideView();
+        });
+    </script>
+
+</body>
+</html>
 
